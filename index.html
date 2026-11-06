@@ -4,9 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eventnavn</title>
+  <title>Vinsmageren</title>
   <link rel="stylesheet" href="./starter.css">
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="images/favicon/site.webmanifest" />
 </head>
 
 <body>
@@ -14,17 +19,48 @@
     <div class="header-content">
       <a class="site-logo" href="./">Eventnavn</a>
       <nav class="site-nav">
-        <button>Menu</button>
+        <button class="menu-btn" popovertarget="menu">Menu</button>
         <ul class="menu" id="menu" popover>
-          <li><a href="./" aria-current="page">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html">Formular</a></li>
+          <li><a class="menu-item" href="./" aria-current="page">Forside</a></li>
+          <li><a class="menu-item" href="./svg.html">Interaktiv SVG</a></li>
+          <li><a class="menu-item" href="./form.html">Tilmeld dig</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main></main>
+  <main>
+    <section class="intro">
+      <h1>Velkommen til Vinsmageren</h1>
+      <p class="paragraf-hero">Ønsker du en bredere forståelse af vinverdenen eller elsker du allerede vin og vil gerne
+        prøve nogen nye? Så er du kommet til det rette sted! Her hos vinsmageren kan du komme og smage et stort udvalg
+        af forskellige vin, som f.eks. rødvin, portvin, hvidvin mm. Vi går meget op i at du som kunde, kan går herfra
+        uden at du føler at du ikke ved, hvilken vin du skal parre om med dit næste måltid. Derfor har vi hos
+        Vinsmageren sørget for, at byde på noget mad sammen med hver enkel vin, så du ved lige præcis hvilken vin du
+        skal have til
+        hvilket måltid.</p>
+    </section>
+
+    <section class="vinsmagning-hos-os">
+      <h2>Vinsmagning hos os</h2>
+      <div class="paragraf-h2-forside">
+        <p>Hos os tilbyder vi vinsmagning af både rødvine, hvidvine, rosévine, portvine og
+          dessertvine. Til den vin du smager får du også mulighed for, at tage en bid af noget mad, som typisk serveres
+          med vinen, for at få den fulde gastronomiske oplevelse. Denne pakke inkluderer også alkoholfrie vine. Prisen
+          for denne pakke kan
+          ses på tilmeldingssiden.</p>
+        <p>Hvis du ikke er så meget til alkohol, men alligevel ønsker oplevelsen af en vinsmagning, har vi også en
+          alkoholfripakke til dig. Her kan du få de samme typer vin som i den anden pakke, men bare i en alkoholfri
+          version.
+          Hertil får du også serveret en bid mad til vinene. Prisen for denne pakke kan ses på tilmeldingssiden. </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>h2</h2>
+      <p class="paragraf-h2-forside">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, sequi?</p>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="footer-content">

@@ -4,11 +4,14 @@ html {
   --color-surface: #fff;
   --color-text: #222;
   --color-muted: #666;
-  --color-border: #d8d8d8;
+  --color-border: #565656;
   --space-05: 0.5rem;
   --space-1: 1rem;
   --space-2: 2rem;
   --space-3: 3rem;
+  --color-header: #f8eacf;
+  --color-vinsmagning-hos-os: #6c040bb9;
+  --color-dark-background: #fff;
 
   background: var(--color-page);
   color: var(--color-text);
@@ -250,4 +253,84 @@ main > * {
   background: var(--color-surface);
   color: inherit;
   text-decoration: none;
+}
+
+/* Forside */
+
+/* section.intro */
+section.intro {
+  grid-column: 1/-1;
+  padding-left: 3rem;
+}
+
+.site-header {
+  background-color: var(--color-header);
+}
+
+h2 {
+  text-align: center;
+}
+
+.paragraf-h2-forside {
+  padding-left: 10rem;
+  padding-right: 10rem;
+  @media (width < 800px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.vinsmagning-hos-os {
+  background-color: var(--color-vinsmagning-hos-os);
+  grid-column: 1/-1;
+  color: var(--color-dark-background);
+}
+
+p {
+  margin-top: 1rem;
+}
+
+/* .menu {
+  position-area: bottom span-left;
+}
+
+.menu-btn {
+  border-radius: 40px;
+}
+
+.menu-btn:hover {
+  background-color: rgb(190, 190, 190);
+}
+
+.menu-items:hover {
+  background-color: grey;
+} */
+
+/* Hjælp til */
+/* 
+Border farve
+Transition-duration
+Menu-item styling
+*/
+
+.menu {
+  opacity: 0;
+  rotate: 360deg;
+  transition: 0.5s;
+  transition-behavior: allow-discrete;
+  position-area: bottom span-left;
+}
+
+.menu:popover-open {
+  opacity: 1;
+  rotate: none;
+
+  @starting-style {
+    opacity: 0;
+    rotate: -360deg;
+  }
+}
+
+.menu-item:hover {
+  background-color: grey;
 }
