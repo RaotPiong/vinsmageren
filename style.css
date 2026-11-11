@@ -12,6 +12,7 @@ html {
   --color-header: #f8eacf;
   --color-vinsmagning-hos-os: #6c040bb9;
   --color-dark-background: #fff;
+  --color-menu-border: #6c040b;
 
   background: var(--color-page);
   color: var(--color-text);
@@ -166,8 +167,8 @@ main > * {
 
 .site-nav button {
   padding: 0.4rem 0.7rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  /* border: 1px solid var(--color-border); */
+  /* background: var(--color-surface); */
   @media (width > 600px) {
     display: none;
   }
@@ -261,6 +262,13 @@ main > * {
 section.intro {
   grid-column: 1/-1;
   padding-left: 3rem;
+  background-image: url(images/fire_vinglas_pa_tonde.avif);
+  background-size: cover;
+  padding-bottom: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
 }
 
 .site-header {
@@ -286,39 +294,37 @@ h2 {
   color: var(--color-dark-background);
 }
 
+h1,
+.paragraf-hero {
+  color: var(--color-dark-background);
+}
+
 p {
   margin-top: 1rem;
 }
 
-/* .menu {
+.menu {
   position-area: bottom span-left;
 }
 
 .menu-btn {
+  border: 2px solid var(--color-menu-border);
   border-radius: 40px;
+  background-color: var(--color-surface);
 }
 
 .menu-btn:hover {
   background-color: rgb(190, 190, 190);
+  transition: 0.4s;
 }
 
-.menu-items:hover {
-  background-color: grey;
-} */
-
-/* Hjælp til */
-/* 
-Border farve
-Transition-duration
-Menu-item styling
-*/
-
 .menu {
-  opacity: 0;
-  rotate: 360deg;
-  transition: 0.5s;
-  transition-behavior: allow-discrete;
-  position-area: bottom span-left;
+  @media (width < 600px) {
+    opacity: 0;
+    transition: 0.3s;
+    transition-behavior: allow-discrete;
+    position-area: bottom span-left;
+  }
 }
 
 .menu:popover-open {
@@ -327,10 +333,11 @@ Menu-item styling
 
   @starting-style {
     opacity: 0;
-    rotate: -360deg;
   }
 }
 
 .menu-item:hover {
-  background-color: grey;
+  @media (width < 600px) {
+    background-color: rgb(203, 203, 203);
+  }
 }

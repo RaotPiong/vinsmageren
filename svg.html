@@ -20,7 +20,7 @@
     <div class="header-content">
       <a class="site-logo" href="./">Eventnavn</a>
       <nav class="site-nav">
-        <button>Menu</button>
+        <button class="menu-btn" popovertarget="menu">Menu</button>
         <ul class="menu" id="menu" popover>
           <li><a href="./">Forside</a></li>
           <li><a href="./svg.html" aria-current="page">Interaktiv SVG</a></li>
@@ -35,10 +35,19 @@
       <header class="svg-intro">
         <h1>Interaktiv SVG</h1>
         <p>Indsæt din egen SVG og forbind den med punkterne nedenfor.</p>
+
+        <div class="svg-placeholder">
+          <svg class="vinsmageren-svg" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+            <use href="./vinsmageren.svg#baggrund"></use>
+            <use href="./vinsmageren.svg#statiske_elementer"></use>
+            <use href="./vinsmageren.svg#vinflasker"></use>
+          </svg>
+        </div>
       </header>
 
       <section class="svg-layout">
-        <div class="svg-placeholder"></div>
+
+        </div>
 
         <article class="panel">
           <h2>Udforsk eventet</h2>
