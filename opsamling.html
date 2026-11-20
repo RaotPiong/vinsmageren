@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html class="html-opsamling" lang="da">
 
 <head>
   <meta charset="UTF-8">
@@ -12,19 +12,31 @@
   <link rel="shortcut icon" href="images/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="images/favicon/site.webmanifest" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">
+        <div class="div-logo">
+          <svg class="svg-logo" viewBox="0 0 1499.92 277.34" xmlns="http://www.w3.org/2000/svg">
+            <use href="./logo.svg#logo"></use>
+          </svg>
+        </div>
+      </a>
       <nav class="site-nav">
-        <button>Menu</button>
+        <button class="menu-btn" popovertarget="menu">Menu</button>
         <ul class="menu" id="menu" popover>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html" aria-current="page">Formular</a></li>
+          <li><a class="menu-item" href="./">Forside</a></li>
+          <li><a class="menu-item" href="./svg.html">Selve vinsmagningen</a></li>
+          <li><a class="menu-item" href="./form.html" aria-current="page">Tilmeld dig</a></li>
         </ul>
       </nav>
     </div>
@@ -33,21 +45,48 @@
   <main>
     <section class="opsamling-page">
       <div class="opsamling-intro">
-        <h1>Opsamling</h1>
-        <p>Vis brugerens valg som et pass, en invitation eller noget andet, der passer til dit event.</p>
-        <div class="actions">
+        <h1 class="h1-opsamling">Tak for tilmeldingen! Vi glæder os til at se jer!</h1>
+        <!-- <p>Vis brugerens valg som et pass, en invitation eller noget andet, der passer til dit event.</p> -->
+        <!-- <div class="actions">
           <a class="button" href="./form.html">Tilbage til formular</a>
-        </div>
+        </div> -->
       </div>
-
-      <article class="opsamling-placeholder"></article>
+      <article class="opsamling-placeholder">
+        <h2 class="h2-opsamling">Din reservation</h2>
+        <div class="div-opsamling">
+          <h4>Navn:</h4>
+          <p class="paragraf-opsamling"><span class="skriv-navn"></span></p>
+          <h4>E-mail:</h4>
+          <p class="paragraf-opsamling"><span class="skriv-email"></span></p>
+          <h4>Telefon nummer:</h4>
+          <p class="paragraf-opsamling"><span class="skriv-telefon"></span></p>
+          <h4>Dato:</h4>
+          <p class="paragraf-opsamling"><span class="skriv-dato"></span></p>
+          <h4>Antal personer:</h4>
+          <p class="paragraf-opsamling"><span class="skriv-antal-personer"></span> personer</p>
+          <h4>Valgte pakke:</h4>
+          <p class="paragraf-opsamling"><span class="skriv-pakke"></span></p>
+        </div>
+        <div class="div-pris-h4">
+          <h4>Pris i alt:</h4>
+        </div>
+        <div class="div-pris-paragraf">
+          <p class="paragraf-pris"><span class="skriv-pris"></span> kr.</p>
+        </div>
+      </article>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
+      <a class="site-logo" href="./">
+        <div class="div-logo">
+          <svg class="svg-logo" viewBox="0 0 1499.92 277.34" xmlns="http://www.w3.org/2000/svg">
+            <use href="./logo_hvid.svg#logo-hvid"></use>
+          </svg>
+        </div>
+      </a>
+      <p class="footer-kontakt-os">Kontakt os</p>
     </div>
   </footer>
   <script src="./script.js"></script>
