@@ -16,6 +16,13 @@ html {
 
   background: var(--color-page);
   color: var(--color-text);
+
+  interpolate-size: allow-keywords;
+}
+
+.html-svg,
+.html-opsamling {
+  background: #6c040b;
 }
 
 /* Globalt layout */
@@ -70,16 +77,16 @@ main > * {
   }
 }
 
-.form-page {
+/* .form-page {
   display: grid;
   gap: var(--space-2);
   @media (width > 600px) {
     grid-template-columns: min(40%, 50ch) 1fr;
   }
-}
+} */
 
 .form-intro {
-  display: grid;
+  /* display: grid; */
   gap: var(--space-1);
   align-content: start;
   max-width: 60ch;
@@ -90,10 +97,15 @@ main > * {
 }
 
 .opsamling-page {
-  display: grid;
+  /* display: grid;
   gap: var(--space-2);
-  align-items: start;
-
+  align-items: start; */
+  margin-left: 12rem;
+  margin-right: 12rem;
+  @media (width < 600px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
   @media (width > 800px) {
     grid-template-columns: minmax(0, 44ch) minmax(20rem, 1fr);
   }
@@ -102,7 +114,8 @@ main > * {
 .opsamling-intro {
   display: grid;
   gap: var(--space-1);
-  max-width: 60ch;
+  max-width: 120ch;
+  margin-bottom: 1rem;
 }
 
 .opsamling-intro p {
@@ -211,6 +224,17 @@ main > * {
   border: 1px solid var(--color-border);
 }
 
+.panel,
+.svg-placeholder {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.opsamling-placeholder {
+  border-radius: 30px;
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.5);
+}
+
 .panel {
   padding: var(--space-1);
   display: grid;
@@ -236,8 +260,13 @@ main > * {
 }
 
 .accordion-item {
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-menu-border);
   background: var(--color-surface);
+  border-radius: 5px;
+}
+
+details {
+  transition: 2s;
 }
 
 .accordion-item p {
@@ -267,8 +296,17 @@ section.intro {
   padding-bottom: 150px;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
+}
+
+.opsamling-placeholder {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+    url("images/Skærmbillede 2026-11-20 114421-Photoroom.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .site-header {
@@ -279,12 +317,21 @@ h2 {
   text-align: center;
 }
 
-.paragraf-h2-forside {
+.paragraf-h2-forside-2 {
   padding-left: 10rem;
   padding-right: 10rem;
   @media (width < 800px) {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+.paragraf-h2-forside-1 {
+  padding-left: 12rem;
+  padding-right: 12rem;
+  @media (width < 800px) {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
@@ -294,9 +341,16 @@ h2 {
   color: var(--color-dark-background);
 }
 
-h1,
+.h1-forside,
 .paragraf-hero {
   color: var(--color-dark-background);
+  margin-right: 15rem;
+  margin-left: 15rem;
+  text-align: center;
+  @media (width < 1000px) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 }
 
 p {
@@ -316,6 +370,7 @@ p {
 .menu-btn:hover {
   background-color: rgb(190, 190, 190);
   transition: 0.4s;
+  cursor: pointer;
 }
 
 .menu {
@@ -330,7 +385,7 @@ p {
 .menu:popover-open {
   opacity: 1;
   rotate: none;
-
+  border-color: var(--color-menu-border);
   @starting-style {
     opacity: 0;
   }
@@ -338,6 +393,338 @@ p {
 
 .menu-item:hover {
   @media (width < 600px) {
-    background-color: rgb(203, 203, 203);
+    background-color: rgba(203, 203, 203, 0.4);
+  }
+  color: rgb(98, 98, 98);
+}
+
+.summary-svg {
+  text-decoration-color: transparent;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-svg::after {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 20px;
+  content: "+";
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+details[open] summary::after {
+  content: "-";
+}
+
+.summary-svg:hover {
+  cursor: pointer;
+  text-decoration-color: rgb(74, 73, 73);
+  transition: text-decoration-color 0.5s ease;
+}
+
+.vin-navn:hover {
+  text-decoration: underline;
+}
+
+.form-tilmeld-dig {
+  display: grid;
+  gap: 1rem;
+}
+
+.btn-tilmeld {
+  margin-top: 10px;
+  padding: 8px 20px 8px 20px;
+  border: solid 1px black;
+  border-radius: 15px;
+  box-shadow: 2px 2px 8px grey;
+  color: var(--color-dark-background);
+  background-image: linear-gradient(
+    to bottom,
+    rgb(131, 230, 131),
+    rgb(9, 136, 9)
+  );
+  cursor: pointer;
+}
+
+.btn-tilmeld:hover {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(118, 207, 118),
+    rgb(9, 113, 9)
+  );
+}
+
+.form-fieldset {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  border: 1.5px solid rgb(99, 99, 99);
+  background-clip: padding-box;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.flere-end-otte {
+  text-decoration: underline;
+}
+
+.input-info {
+  padding: 5px 5px 5px 5px;
+  border: 1.5px solid black;
+  border-radius: 7px;
+}
+
+.input-info:focus {
+  border: 2px solid var(--color-menu-border);
+  outline: none;
+}
+
+.logo {
+  size: 10%;
+}
+
+.svg-logo {
+  width: 200px;
+  @media (width < 600px) {
+    width: 150px;
   }
 }
+
+select {
+  border: 1px solid black;
+  padding: 2px 0px 2px 10px;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+/* Dropdown-container */
+::picker(select) {
+  background: #fff;
+  border-radius: 8px;
+}
+
+/* De enkelte valgmuligheder */
+option {
+  padding: 3px 0 3px 10px;
+}
+
+/* Hover på en option */
+option:hover {
+  background: #6c040b68;
+  cursor: pointer;
+}
+
+/* Den valgte option */
+option:checked {
+  background: #6c040bb9;
+  color: white;
+}
+
+/* Select-feltet, når dropdown er åben */
+select:open {
+  border-color: var(--color-menu-border);
+}
+
+/* Dropdown-pilen */
+select::picker-icon {
+  color: rgb(0, 0, 0);
+}
+
+/* Flueben ved den valgte option */
+option::checkmark {
+  content: none;
+}
+
+#all-inclusive:hover,
+#alkoholfri:hover {
+  cursor: pointer;
+}
+
+::details-content {
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  transition-behavior: allow-discrete;
+}
+
+:open::details-content {
+  height: auto;
+}
+
+summary {
+  padding: 5px 0px 5px 10px;
+}
+
+.site-footer {
+  background-color: rgb(41, 4, 4);
+}
+
+.footer-kontakt-os {
+  cursor: pointer;
+  color: var(--color-dark-background);
+  font-size: 18px;
+}
+
+.menu-tilmelding {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  @media (width < 600px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+.div-tilmelding {
+  display: flex;
+  justify-content: center;
+}
+
+.paragraf-opsamling {
+  margin-top: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.div-opsamling {
+  text-align: center;
+  /* margin-left: 6rem;
+  @media (width < 600px) {
+    margin-left: 2rem;
+  } */
+}
+
+.div-pris-h4 {
+  display: flex;
+  justify-content: center;
+}
+
+.div-pris-paragraf {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.paragraf-pris {
+  margin-left: 0;
+  margin-top: 0;
+  text-decoration: underline;
+}
+
+.h2-opsamling {
+  margin-top: 2rem;
+}
+
+.paragraf-forside,
+.paragraf-summary,
+.div-opsamling,
+.div-pris-paragraf {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  font-weight: 350;
+  font-style: italic;
+}
+
+.div-pris-h4,
+.paragraf-pris {
+  font-size: 24px;
+}
+
+.paragraf-pris {
+  font-weight: 500;
+}
+
+p,
+.menu-item {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  font-weight: 350;
+}
+
+legend,
+.flere-end-otte,
+option,
+label {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: "Orange Avenue";
+  src: url(/fonts/OrangeAvenueDEMO-Regular.otf);
+}
+
+@font-face {
+  font-family: "Edwardian Script ITC";
+  src: url(/fonts/Edwardian\ Script\ ITC\ Regular.ttf);
+}
+
+.summary-svg {
+  font-family: "Edwardian Script ITC";
+  font-size: 28px;
+}
+
+h1 {
+  font-family: "Orange Avenue";
+}
+
+#navn,
+#email,
+#telefon {
+  margin-bottom: 1rem;
+}
+
+.h2-opsamling {
+  margin-bottom: 3rem;
+}
+
+.h1-svg,
+.h1-opsamling {
+  color: var(--color-dark-background);
+}
+
+legend {
+  margin-top: 20px;
+}
+
+h2 {
+  font-family: "Lemonada", cursive;
+  font-optical-sizing: auto;
+}
+
+.html-form {
+  background: #f2ede4;
+}
+
+.cta-btn {
+  display: block;
+  width: fit-content;
+  border: 1px solid black;
+  background-color: #6c040b;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: var(--color-dark-background);
+  text-decoration: none;
+}
+
+/* Hjælp til */
+/* 
+Hvordan får jeg mit baggrundsbillede på forsiden til at se godt ud på stort format
+Kan man vha. javascript indsamle data to forskellige steder og plusse dem sammen matematisk
+*/
+
+/* Mangler
+h2 font
+baggrundsfarve
+evt. dekoration
+*/

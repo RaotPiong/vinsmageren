@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html class="html-form" lang="da">
 
 <head>
   <meta charset="UTF-8">
@@ -12,39 +12,100 @@
   <link rel="shortcut icon" href="images/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="images/favicon/site.webmanifest" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">
+        <div class="div-logo">
+          <svg class="svg-logo" viewBox="0 0 1499.92 277.34" xmlns="http://www.w3.org/2000/svg">
+            <use href="./logo.svg#logo"></use>
+          </svg>
+        </div>
+      </a>
       <nav class="site-nav">
         <button class="menu-btn" popovertarget="menu">Menu</button>
         <ul class="menu" id="menu" popover>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html" aria-current="page">Formular</a></li>
+          <li><a class="menu-item" href="./">Forside</a></li>
+          <li><a class="menu-item" href="./svg.html">Selve vinsmagningen</a></li>
+          <li><a class="menu-item" href="./form.html" aria-current="page">Tilmeld dig</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main class="menu-tilmelding">
     <section class="form-page">
       <header class="form-intro">
-        <h1>Formular</h1>
-        <p>Lav en formular, der sender brugeren videre til opsamlingssiden.</p>
+        <h1 class="h1-tilmelding">Tilmelding</h1>
       </header>
 
-      <form class="form-placeholder" action="./opsamling.html"></form>
+      <form class="form-tilmeld-dig" action="./opsamling.html">
+        <fieldset class="form-fieldset">
+          <legend>Information</legend>
+          <label for="navn">Dit fulde navn:</label>
+          <input type="text" class="input-info" id="navn" name="navn" placeholder="Fx Jakob Jakobsen" required>
+          <label for="email">Din e-mail:</label>
+          <input type="email" class="input-info" id="email" name="email" placeholder="Fx jakob123@gmail.com" required>
+          <label for="telefon">Dit telefon nummer:</label>
+          <input type="tel" class="input-info" id="telefon" name="telefon" placeholder="Fx +45 12 34 56 78" required>
+        </fieldset>
+        <fieldset class=" form-fieldset">
+          <legend>Hvor mange bliver I?</legend>
+          <select name="antal-personer" required>
+            <Option value="" disabled selected>Antal personer</Option>
+            <Option value="1">1</Option>
+            <Option value="2">2</Option>
+            <Option value="3">3</Option>
+            <Option value="4">4</Option>
+            <Option value="5">5</Option>
+            <Option value="6">6</Option>
+            <Option value="7">7</Option>
+            <Option value="8">8</Option>
+          </select>
+          <p class="flere-end-otte">OBS: Er I flere end 8 bedes I ringe til os i stedet.</p>
+        </fieldset>
+        <fieldset class="form-fieldset">
+          <legend>Hvilken dato ønsker du/I? </legend>
+          <label for="dato">Dato:</label>
+          <input type="date" id="dato" name="dato" class="input-info" required>
+        </fieldset>
+        <fieldset class="form-fieldset">
+          <legend>Hvilken pakke ønsker du/I?</legend>
+          <label for="all-inclusive">
+            <input type="radio" id="all-inclusive" name="pakke" value="All-Inclusive (499 kr.)" required>
+            All-inclusive: 499 kr. pr. person
+          </label>
+          <label for="alkoholfri">
+            <input type="radio" id="alkoholfri" name="pakke" value="Alkoholfri (379 kr.)">
+            Alkoholfri: 379 kr. pr. person
+          </label>
+        </fieldset>
+        <div class="div-tilmelding">
+          <button class="btn-tilmeld" type="submit">Tilmeld</button>
+        </div>
+      </form>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
+      <a class="site-logo" href="./">
+        <div class="div-logo">
+          <svg class="svg-logo" viewBox="0 0 1499.92 277.34" xmlns="http://www.w3.org/2000/svg">
+            <use href="./logo_hvid.svg#logo-hvid"></use>
+          </svg>
+        </div>
+      </a>
+      <p class="footer-kontakt-os">Kontakt os</p>
     </div>
   </footer>
   <script src="./script.js"></script>

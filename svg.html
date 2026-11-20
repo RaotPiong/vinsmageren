@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html class="html-svg" lang="da">
 
 <head>
   <meta charset="UTF-8">
@@ -12,19 +12,32 @@
   <link rel="shortcut icon" href="images/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="images/favicon/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">
+        <div class="div-logo">
+          <svg class="svg-logo" viewBox="0 0 1499.92 277.34" xmlns="http://www.w3.org/2000/svg">
+            <use href="./logo.svg#logo"></use>
+          </svg>
+        </div>
+      </a>
       <nav class="site-nav">
         <button class="menu-btn" popovertarget="menu">Menu</button>
         <ul class="menu" id="menu" popover>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html" aria-current="page">Interaktiv SVG</a></li>
-          <li><a href="./form.html">Formular</a></li>
+          <li><a class="menu-item" href="./">Forside</a></li>
+          <li><a class="menu-item" href="./svg.html" aria-current="page">Selve vinsmagningen</a></li>
+          <li><a class="menu-item" href="./form.html">Tilmeld dig</a></li>
         </ul>
       </nav>
     </div>
@@ -33,48 +46,113 @@
   <main>
     <section class="svg-page">
       <header class="svg-intro">
-        <h1>Interaktiv SVG</h1>
-        <p>Indsæt din egen SVG og forbind den med punkterne nedenfor.</p>
-
+        <h1 class="h1-svg">Selve vinsmagningen</h1>
+        <!-- <p>Indsæt din egen SVG og forbind den med punkterne nedenfor.</p> -->
+      </header>
+      <section class="svg-layout">
         <div class="svg-placeholder">
           <svg class="vinsmageren-svg" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
             <use href="./vinsmageren.svg#baggrund"></use>
             <use href="./vinsmageren.svg#statiske_elementer"></use>
-            <use href="./vinsmageren.svg#vinflasker"></use>
+            <use class="hvidvin interaktiv-svg" href="./vinsmageren.svg#hvidvin"></use>
+            <use class="rodvin interaktiv-svg" href="./vinsmageren.svg#rodvin"></use>
+            <use class="rosevin interaktiv-svg" href="./vinsmageren.svg#rosevin"></use>
+            <use class="portvin interaktiv-svg" href="./vinsmageren.svg#portvin"></use>
+            <use class="dessertvin interaktiv-svg" href="./vinsmageren.svg#dessertvin"></use>
           </svg>
         </div>
-      </header>
-
-      <section class="svg-layout">
-
-        </div>
-
         <article class="panel">
-          <h2>Udforsk eventet</h2>
+          <h2>Læs om sammenspillet mellem mad og vin</h2>
           <div class="accordion">
             <!-- TODO: Lav om til details/summary -->
             <div class="accordion-item">
-              <h3>Punkt 1</h3>
-              <p>Beskriv første område, aktivitet eller del af dit event.</p>
+              <details name="vin" id="vaelg-hvidvin">
+                <summary class="summary-svg">
+                  <span class="vin-navn">Hvidvin</span>
+                </summary>
+                <p class="paragraf-summary">Hvidvine har normalt et ret højt syreindhold, som har samme effekt som et
+                  sprøjt citron i en
+                  fiskeret. Derudover er hvidvine meget lette og milde i smagen, som ikke overdøver den mad man spiser.
+                  Vi har derfor valgt, at servere en fiskeret og en grøntsagsret til hvidvinen. Retter
+                  varierer en smule
+                  fra dag til dag.
+                </p>
+              </details>
             </div>
             <div class="accordion-item">
-              <h3>Punkt 2</h3>
-              <p>Beskriv andet område, aktivitet eller del af dit event.</p>
+              <details name="vin" id="vaelg-rodvin">
+                <summary class="summary-svg">
+                  <span class="vin-navn">Rødvin</span>
+                </summary>
+                <p class="paragraf-summary">Rødvin indeholder noget der kaldes garvesyrer, og denne garvesyrer binder
+                  sig til fedt fra
+                  fedtholdigt mad. Det gør at vinen føles blødere og mere frugtig i smagen, fremfor en tør og bitter
+                  smag som vinen ellers vil have haft, hvis man drak den alene. Vi har derfor valgt, at servere en
+                  bøfret og en svamperet til rødvinen. Retter varierer en smule fra dag til dag. </p>
+              </details>
             </div>
             <div class="accordion-item">
-              <h3>Punkt 3</h3>
-              <p>Beskriv tredje område, aktivitet eller del af dit event.</p>
+              <details name="vin" id="vaelg-rosevin">
+                <summary class="summary-svg">
+                  <span class="vin-navn">Rosévin</span>
+                </summary>
+                <p class="paragraf-summary">Rosévin har ofte smagsnoter af røde frugter som jordbær, hindbær, ribs og
+                  vandmelon samt en frisk
+                  syrlig smag. Det matcher godt med mad der indeholder syrer, og samme sødme som de nævnte frugter. Man
+                  kan sige at rosévinen er den type vin der ligger i mellem en rødvin og en hvidvin, fordi den virker
+                  fyldigere og kraftigere i smagen end en hvidvin, men alligevel milder end en rødvin. Derudover
+                  indeholder rosévin også en smule garvesyrer, som rødvinen har meget af og hvidvinen slet ikke har. Vi
+                  har derfor valgt, at servere charcuteri og en tomatret til rosévinen. Retter varierer en smule fra dag
+                  til dag.</p>
+              </details>
+            </div>
+            <div class="accordion-item">
+              <details name="vin" id="vaelg-portvin">
+                <summary class="summary-svg">
+                  <span class="vin-navn">Portvin</span>
+                </summary>
+                <p class="paragraf-summary">Portvin har et højt indhold af garvesyrer, og har en meget kraftig og sød
+                  smag af bær. Garvensyren
+                  virker godt med fedtholdigt mad og kraftige smage, fordi garvesyren binder sig til fedt og kan
+                  balancere mad med kraftig smag. Sødmen i portvinen kontrasterer utroligt godt med saltet mad. Vi har
+                  derfor valgt, at servere blåskimmeloste og veganske blåskimmeloste til portvinen. Retter varierer en
+                  smule fra dag til dag. </p>
+              </details>
+            </div>
+            <div class="accordion-item">
+              <details name="vin" id="vaelg-dessertvin">
+                <summary class="summary-svg">
+                  <span class="vin-navn">Dessertvin</span>
+                </summary>
+                <p class="paragraf-summary">Dessertvin kan i princippet være alle typer vin, så længe den er sød nok,
+                  men det er
+                  dog oftest hvidvine, hedvine og mousserende vine. Dessertvin får dens navn fra den søde smag som den
+                  indeholder. Denne sødme får den fra restsukker i vinen, som opstår når gæringen stoppes før alt det
+                  naturlige sukker fra vindruernes omdannes til alkohol. Som tommelfingerregel skal den vin man drikker,
+                  være mindst lige så sød som selve desserten. Vi har derfor valgt, at servere crème brûlée, vaniljeis
+                  og brownie. Desserterne findes både i klassisk version og en vegansk version. Retterne kan varierer en
+                  smule fra dag til dag.</p>
+              </details>
             </div>
           </div>
         </article>
+
+
+
       </section>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
+      <a class="site-logo" href="./">
+        <div class="div-logo">
+          <svg class="svg-logo" viewBox="0 0 1499.92 277.34" xmlns="http://www.w3.org/2000/svg">
+            <use href="./logo_hvid.svg#logo-hvid"></use>
+          </svg>
+        </div>
+      </a>
+      <p class="footer-kontakt-os">Kontakt os</p>
     </div>
   </footer>
   <script src="./script.js"></script>
